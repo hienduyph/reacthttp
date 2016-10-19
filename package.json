@@ -1,0 +1,31 @@
+{
+  "name": "react-http",
+  "version": "0.0.1",
+  "description": "An universal http module for react",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinpee/react-http.git"
+  },
+  "keywords": [
+    "react",
+    "http",
+    "universal"
+  ],
+  "author": "Tinpee <tinpee.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tinpee/react-http/issues"
+  },
+  "homepage": "https://github.com/tinpee/react-http#readme",
+  "dependencies": {
+    "es6-promise": "^4.0.5",
+    "isomorphic-fetch": "^2.2.1"
+  }
+}
