@@ -2,7 +2,7 @@ const should = require('should');
 const path = require("path");
 const fs = require('fs');
 const server = require("./server");
-import Http from "../lib";
+import Http from "../src";
 
 describe('ReactHttpTesting', () => {
   // Start server before testing
