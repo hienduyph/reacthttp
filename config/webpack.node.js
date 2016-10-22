@@ -20,7 +20,9 @@ module.exports = webpackMerge(commonConfig, {
   entry: "./main.js",
   output: {
     path: path.resolve("lib"),
-    filename: "main.js"
+    filename: "main.js",
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   externals: nodeModules,
 });

@@ -8,6 +8,8 @@ module.exports = webpackMerge(commonConfig, {
   entry: "./browser.js",
   output: {
     path: path.resolve("lib"),
-    filename: "browser.js"
+    filename: "browser.js",
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   }
 });
