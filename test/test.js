@@ -2,12 +2,13 @@ const should = require('should');
 const path = require("path");
 const fs = require('fs');
 const server = require("./server");
-import { Http } from "../lib";
+import Http from "../lib";
 
 describe('ReactHttpTesting', () => {
   // Start server before testing
   const apiURI = "http://localhost:" + server.port;
   before(() => {
+    console.log("Run server ...", apiURI);
     server.app.listen(server.port);
   });
 

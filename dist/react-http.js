@@ -46,42 +46,18 @@
 
 	"use strict";
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
 	var _reactHttp = __webpack_require__(1);
-	
-	Object.defineProperty(exports, "ReactHttp", {
-	  enumerable: true,
-	  get: function get() {
-	    return _reactHttp.Http;
-	  }
-	});
 	
 	var _headers = __webpack_require__(8);
 	
-	Object.defineProperty(exports, "getHeaders", {
-	  enumerable: true,
-	  get: function get() {
-	    return _headers.getHeaders;
-	  }
-	});
-	Object.defineProperty(exports, "setHeader", {
-	  enumerable: true,
-	  get: function get() {
-	    return _headers.setHeader;
-	  }
-	});
-	
 	var _searchParams = __webpack_require__(9);
 	
-	Object.defineProperty(exports, "UrlSearchParams", {
-	  enumerable: true,
-	  get: function get() {
-	    return _searchParams.UrlSearchParams;
-	  }
-	});
+	module.exports = {
+	  ReactHttp: _reactHttp.Http,
+	  getHeaders: _headers.getHeaders,
+	  setHeader: _headers.setHeader,
+	  UrlSearchParams: _searchParams.UrlSearchParams
+	}; // Main.js for webpack bundle
 
 /***/ },
 /* 1 */
