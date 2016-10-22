@@ -4,8 +4,7 @@
  * By default, Content-Type is application/json
  * Upload file with Content-Type: multipart/form-data
  */
-
-import fetch from "isomorphic-fetch";
+import fetch from "./fetch";
 import NodeFormData from "form-data";
 import { polyfill } from 'es6-promise';
 import { getHeaders } from "./headers";
@@ -123,7 +122,7 @@ const BaseHttp = (header) => {
   const handleError = (error) => {
     throw error.message || "Server error";
   };
-  
+
   return httpMethod;
 };
 
