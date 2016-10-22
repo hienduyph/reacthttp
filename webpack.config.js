@@ -1,13 +1,20 @@
 const webpack = require("webpack");
 const path = require("path");
 
+let outputFle;
+if (process.env.WEBPACK_ENV == "prod") {
+  outputFle = "react-http.min.js";
+} else {
+  outputFle = "react-http.js";
+}
+
 module.exports = {
-  target: "web",
+  devtool: "source-map",
   context: path.resolve("lib"),
   entry: "./main.js",
   output: {
     path: path.resolve("dist"),
-    filename: "react-http.js"
+    filename: outputFle
   },
   module: {
     loaders: [
