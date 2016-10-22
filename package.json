@@ -1,6 +1,6 @@
 {
   "name": "reacthttp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An universal http module for react",
   "main": "dist/react-http.js",
   "directories": {
