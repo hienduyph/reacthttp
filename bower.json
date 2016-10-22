@@ -1,0 +1,26 @@
+{
+  "name": "reacthttp",
+  "description": "An universal http module for react",
+  "main": "dist/react-http.min.js",
+  "authors": [
+    "Tinpee <tinpee.dev@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "http",
+    "universal"
+  ],
+  "homepage": "https://github.com/tinpee/reacthttp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib",
+    ".gitignore",
+    ".npmignore",
+    "examples"
+  ]
+}

@@ -19,6 +19,5 @@ module.exports = webpackMerge(commonConfig, {
       }
     }),
     new webpack.NoErrorsPlugin()
-  );
   ]
 });
