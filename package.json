@@ -1,5 +1,5 @@
 {
-  "name": "react-http",
+  "name": "reacthttp",
   "version": "0.0.1",
   "description": "An universal http module for react",
   "main": "lib/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tinpee/react-http.git"
+    "url": "git+https://github.com/tinpee/reacthttp.git"
   },
   "keywords": [
     "react",
