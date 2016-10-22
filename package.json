@@ -2,17 +2,21 @@
   "name": "reacthttp",
   "version": "0.0.7",
   "description": "An universal http module for react",
-  "main": "src/index.js",
+  "main": "lib/main.js",
+  "browser": "lib/browser.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "rimraf": "node_modules/.bin/rimraf",
+    "webpack": "node_modules/.bin/webpack",
     "test": "node_modules/.bin/mocha --require babel-core/register",
     "prebuild": "npm run rimraf -- lib",
-    "build": "node_modules/.bin/webpack",
-    "preprod": "npm run rimraf -- dist",
-    "prod": "WEBPACK_ENV=prod node_modules/.bin/webpack -p"
+    "build": "npm run build:node && npm run build:browser",
+    "build:node": "npm run webpack -- --config config/webpack.node.js --progress --inline --profile --colors --display-error-details -bail",
+    "build:browser": "npm run webpack -- --config config/webpack.browser.js --progress --inline --profile --colors --display-error-details -bail",
+    "prepdist": "npm run rimraf -- dist",
+    "dist": "npm run webpack -- --config config/webpack.dist.js -p --progress --inline --profile --colors --display-error-details -bail"
   },
   "repository": {
     "type": "git",
@@ -44,7 +48,9 @@
     "json-loader": "^0.5.4",
     "mocha": "^3.1.2",
     "multer": "^1.2.0",
+    "rimraf": "^2.5.4",
     "should": "^11.1.1",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-merge": "^0.15.0"
   }
 }

@@ -4,13 +4,10 @@
  * By default, Content-Type is application/json
  * Upload file with Content-Type: multipart/form-data
  */
-import fetch from "./fetch";
 import NodeFormData from "form-data";
-import { polyfill } from 'es6-promise';
-import { getHeaders } from "./headers";
 import { UrlSearchParams } from "./search-params";
 
-const BaseHttp = (header) => {
+export const BaseHttp = (header, fetch) => {
   let httpMethod = {};
 
   //Get method
@@ -128,12 +125,9 @@ const BaseHttp = (header) => {
 
 const getFormData = () => {
   // request from node
-  if ((typeof window === undefined) || (typeof window === "undefined")) {
+  if (typeof window === "undefined") {
     return NodeFormData;
   }
   // request from browser
   return window.FormData;
 }
-
-
-export const Http = BaseHttp(getHeaders);
