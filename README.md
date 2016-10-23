@@ -9,14 +9,15 @@ ReactHttp provides 5 basic method of REST API: `POST, GET, PATCH, DELETE, PUT` a
 ## Installation
 - With npm: `npm install reacthttp`
 - With bower: `bower install reacthttp`
-- cdnjs: ""
+- cdnjs
+
 ## Usage
 ### Basic usage
  ```js
- import ReactHttp from "reacthttp";
+import ReactHttp from "reacthttp";
 
- // Get method
- ReactHttp.get("http://url")
+// Get method
+ReactHttp.get("http://url")
   .then(data => {
     console.log(data);
   })
@@ -42,6 +43,7 @@ ReactHttp.sendFiles("http://url", {file: input.files[0]})
     console.log(error);
   })
 ```
+
 ### With URL Search Params
 UrlSearchParams supports all method of `ReactHttp`
 ```js

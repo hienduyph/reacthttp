@@ -8,7 +8,6 @@ describe('ReactHttpTesting', () => {
   // Start server before testing
   const apiURI = "http://localhost:" + server.port;
   before(() => {
-    console.log("Run server ...", apiURI);
     server.app.listen(server.port);
   });
 
