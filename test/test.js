@@ -2,7 +2,7 @@ const should = require('should');
 const path = require("path");
 const fs = require('fs');
 const server = require("./server");
-import Http from "../src/main";
+import Http, { UrlSearchParams, setHeader } from "../src/main";
 
 describe('ReactHttpTesting', () => {
   // Start server before testing
@@ -20,6 +20,39 @@ describe('ReactHttpTesting', () => {
           done();
         });
     });
+    it("should contains request search params in resposne", done => {
+      const searchParams = new UrlSearchParams();
+      searchParams.append("page", 10);
+      searchParams.append("order_by", "title")
+      Http.get(apiURI + "/secured/ping", searchParams)
+        .then(resp => {
+            resp.should.containEql({ foo: "bar", page: 10, order_by: "title"});
+            done();
+        });
+    });
+
+    it("should contains request custome header when setHeader", done => {
+      const customeHeader = {
+        Authorization: "Brear a1764324hkjsdf"
+      };
+      setHeader(customeHeader);
+      Http.get(apiURI + "/secured/ping")
+        .then(resp => {
+          resp.should.containEql(customeHeader);
+          done();
+        })
+    });
+
+    it("should contains request custome header when use local header options", done => {
+      const customeHeader = {
+        Authorization: "Brear a1764324hkjsdf"
+      };
+      Http.get(apiURI + "/secured/ping", null, customeHeader)
+        .then(resp => {
+          resp.should.containEql(customeHeader);
+          done();
+        })
+    })
   });
 
   describe('post()', () => {

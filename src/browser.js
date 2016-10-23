@@ -5,7 +5,13 @@ import { getHeaders} from "./headers";
 export { setHeader } from "./headers";
 export * from "./search-params";
 
-const Http = BaseHttp(getHeaders, window.fetch);
+const options = {
+  header: getHeaders,
+  fetch: window.fetch,
+  formData: window.FormData
+};
+
+const Http = BaseHttp(options);
 if (!window.hasOwnProperty("ReactHttp")) {
   window.ReactHttp = Http;
 }

@@ -4,10 +4,9 @@
  * By default, Content-Type is application/json
  * Upload file with Content-Type: multipart/form-data
  */
-import NodeFormData from "form-data";
 import { UrlSearchParams } from "./search-params";
 
-export const BaseHttp = (header, fetch) => {
+export const BaseHttp = ({header, fetch, formData}) => {
   let httpMethod = {};
 
   //Get method
@@ -84,12 +83,12 @@ export const BaseHttp = (header, fetch) => {
   // Post file
   // fileObj is an object
   // Example: fileObjs = { file1: input.files[0] }
-  httpMethod.sendFiles = (url, fileObjs, searchParams) => {
+  httpMethod.sendFiles = (url, fileObjs, searchParams, headerOptions) => {
+    const header = Object.assign({}, {"Content-Type": "multipart/form-data"}, headerOptions);
     if (searchParams instanceof UrlSearchParams) {
       url += `?${searchParams.getUrl()}`;
     }
     // Formdata
-    const formData = getFormData();
     let data = new formData();
     for (let key in fileObjs) {
       data.append(key, fileObjs[key])
@@ -98,7 +97,7 @@ export const BaseHttp = (header, fetch) => {
     return fetch(url, {
         method: "POST",
         body: data,
-        header: "multipart/form-data"
+        header: header
       })
       .then(extraData)
       .catch(handleError);
@@ -122,12 +121,3 @@ export const BaseHttp = (header, fetch) => {
 
   return httpMethod;
 };
-
-const getFormData = () => {
-  // request from node
-  if (typeof window === "undefined") {
-    return NodeFormData;
-  }
-  // request from browser
-  return window.FormData;
-}

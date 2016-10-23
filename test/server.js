@@ -9,7 +9,18 @@ const port = process.env.PORT || 13000;
 app.use(bodyParser.json());
 
 app.get("/secured/ping", (req, resp) => {
-  resp.status(200).json({foo: "bar"});
+  // query search params
+  const page = Number(req.query["page"]) || 0;
+  const order_by = req.query["order_by"] || "id";
+  // header
+  const auth = req.get("Authorization");
+  const response = {
+    foo: "bar",
+    page,
+    order_by,
+    Authorization: auth
+  };
+  resp.status(200).json(response);
 });
 
 app.post("/secured/ping", (req, resp) => {
@@ -42,4 +53,3 @@ module.exports = {
   app: app,
   port: port
 };
-
