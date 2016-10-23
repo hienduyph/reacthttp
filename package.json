@@ -1,6 +1,6 @@
 {
   "name": "reacthttp",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "description": "An universal http module for react",
   "main": "lib/main.js",
   "browser": "lib/browser.js",
