@@ -2,8 +2,6 @@
   "name": "reacthttp",
   "dependencies": {},
   "globalDependencies": {
-    "js-cookie": "registry:dt/js-cookie#2.0.0+20160317120654",
-    "lodash": "registry:dt/lodash#4.14.0+20161004174455",
-    "node": "registry:dt/node#6.0.0+20161019125345"
+    "js-cookie": "registry:dt/js-cookie#2.0.0+20160317120654"
   }
 }
