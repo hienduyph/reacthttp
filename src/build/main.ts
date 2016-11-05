@@ -1,11 +1,13 @@
-/// <references path="../../typings/index.d.ts" >
-
 import {Http} from "../http";
 import { RequestOptions } from "../request_options";
+import { ResponseOptions } from "../response_options";
 import { NodeBackend } from "../backends/node";
 
 const defaultRequestOptions = new RequestOptions();
-const http = new Http(NodeBackend, defaultRequestOptions);
+const responseOptions = new ResponseOptions();
+const nodeBackend = new NodeBackend(responseOptions);
+const http = new Http(nodeBackend, defaultRequestOptions);
+
 export default http;
 
 export {RequestOptions} from "../request_options";

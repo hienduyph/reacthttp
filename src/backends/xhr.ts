@@ -1,7 +1,7 @@
 import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
 import { isNull } from "lodash";
-import * as cookie from "js-cookie";
+import cookie from "./cookies";
 
 import {ResponseOptions} from "../response_options";
 import {ContentType, ReadyState, RequestMethod, ResponseContentType, ResponseType} from "../enums";
@@ -16,7 +16,7 @@ const XSSI_PREFIX = /^\)\]\}",?\n/;
 
 export class BrowserXhr {
   constructor() {/** */}
-  public build(): any { return <any>(new XMLHttpRequest()); }
+  build(): any { return <any>(new XMLHttpRequest()); }
 }
 
 /**

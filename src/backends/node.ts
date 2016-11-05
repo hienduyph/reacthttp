@@ -7,9 +7,9 @@ import { ReadyState } from "../enums";
 import { ResponseOptions } from "../response_options";
 
 export class NodeConnection implements Connection {
+  readyState: ReadyState;
   request: Request;
   response: Observable<Response>;
-  readyState: ReadyState;
   constructor(req: Request, baseResponseOptions?: ResponseOptions) {
   }
 }

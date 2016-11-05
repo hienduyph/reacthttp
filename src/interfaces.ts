@@ -11,8 +11,8 @@ import {URLSearchParams} from "./url_search_params";
  *
  * @experimental
  */
-export abstract class ConnectionBackend {
-  abstract createConnection(request: any): Connection
+export interface ConnectionBackend {
+  createConnection(request: any): Connection;
 }
 
 /**
@@ -20,7 +20,7 @@ export abstract class ConnectionBackend {
  *
  * @experimental
  */
-export abstract class Connection {
+export interface Connection {
   readyState: ReadyState;
   request: Request;
   response: any;  // TODO: generic of <Response>;
@@ -31,8 +31,8 @@ export abstract class Connection {
  *
  * @experimental
  */
-export abstract class XSRFStrategy {
-  abstract configureRequest(req: Request): void;
+export interface XSRFStrategy {
+  configureRequest(req: Request): void;
 }
 
 /**
