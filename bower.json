@@ -1,7 +1,7 @@
 {
   "name": "reacthttp",
   "description": "An universal http module for react",
-  "main": "dist/react-http.min.js",
+  "main": "lib/main.js",
   "authors": [
     "Tinpee <tinpee.dev@gmail.com>"
   ],
@@ -22,5 +22,11 @@
     ".gitignore",
     ".npmignore",
     "examples"
-  ]
+  ],
+  "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/tinpee/reacthttp.git",
+    "type": "git"
+  },
+  "author": "Tinpee <tinpee.dev@gmail.com>"
 }

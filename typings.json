@@ -1,0 +1,7 @@
+{
+  "name": "reacthttp",
+  "dependencies": {},
+  "globalDependencies": {
+    "js-cookie": "registry:dt/js-cookie#2.0.0+20160317120654"
+  }
+}

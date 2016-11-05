@@ -7,9 +7,9 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel' // 'babel-loader' is also a valid name to reference
+        loader: 'ts'
       },
       {
         test: /\.json$/,
